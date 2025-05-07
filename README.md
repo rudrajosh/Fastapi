@@ -1,4 +1,4 @@
-u# FastAPI Social Media API
+FastAPI Social Media API
 
 This is a FastAPI-based social media API with user authentication, posts, likes, and comments functionality.
 
