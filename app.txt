@@ -1,0 +1,46 @@
+Start the FastAPI server with: uvicorn app:app --reload
+Register a new user:
+Method: POST
+URL: http://localhost:8000/register
+Body (JSON): { "username": "yourusername", "email": "youremail@example.com", "password": "yourpassword" }
+Login to get an access token:
+Method: POST
+URL: http://localhost:8000/login
+Body (x-www-form-urlencoded): username=yourusername, password=yourpassword
+Response will contain "access_token"
+For authenticated requests, add an Authorization header:
+Key: Authorization
+Value: Bearer <access_token>
+Create a post:
+Method: POST
+URL: http://localhost:8000/posts/
+Body (JSON): { "title": "Post Title", "content": "Post content" }
+Like a post:
+Method: POST
+URL: http://localhost:8000/posts/{post_id}/likes
+Unlike a post:
+Method: DELETE
+URL: http://localhost:8000/posts/{post_id}/likes
+List posts:
+Method: GET
+URL: http://localhost:8000/posts/
+List posts with likes count:
+Method: GET
+URL: http://localhost:8000/posts/with_likes
+Create a comment:
+Method: POST
+URL: http://localhost:8000/comments/
+Body (JSON): { "content": "Comment text", "post_id": post_id }
+List comments:
+Method: GET
+URL: http://localhost:8000/comments/
+Get a specific comment:
+Method: GET
+URL: http://localhost:8000/comments/{comment_id}
+Update a comment (only by owner):
+Method: PUT
+URL: http://localhost:8000/comments/{comment_id}
+Body (JSON): { "content": "Updated comment text", "post_id": post_id }
+Delete a comment (only by owner):
+Method: DELETE
+URL: http://localhost:8000/comments/{comment_id}
